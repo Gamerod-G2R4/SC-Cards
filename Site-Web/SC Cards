@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Citizen - Collection de Vaisseaux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #bbbbbb;
+        }
+
+        .Interest {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('background.png') no-repeat center center / cover;
+            color: #ffffff;
+        }
+
+        .filter-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .filter-buttons button {
+            background-color: #1f1f1f;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-buttons button:hover {
+            background-color: #333333;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 15px;
+            width: calc(20% - 20px);
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            color: #bbbbbb;
+        }
+
+        @media (max-width: 1200px) {
+            .card {
+                width: calc(25% - 20px);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .card {
+                width: calc(33.33% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card {
+                width: calc(100% - 20px);
+            }
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+
+        footer p:last-child {
+            font-size: 0.8em;
+            color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Star Citizen - Cartes de Vaisseaux</h1>
+        <nav>
+            <ul>
+                <li><a href="SC Cards">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <div class="Interest">
+            <h2>Explorez l'Univers Star Citizen</h2>
+            <p>Découvrez les vaisseaux emblématiques de Star Citizen sous forme de cartes à collectionner.</p>
+        </div>
+    </section>
+
+    <section id="vaisseaux">
+        <center><h2>Nos Cartes Actuelles (10 sur 248)</h2></center>
+        <div class="filter-buttons">
+            <button onclick="sortCardsAlphabetically()">Trier par ordre alphabétique</button>
+            <button onclick="sortCardsBySize()">Trier par taille</button>
+        </div>
+        <div class="card-container" id="card-container"> 
+            <div class="card" data-size="2">
+                <img src="Aegis Avenger.jpg" alt="Aegis Avenger">
+                <h3>Aegis Avenger</h3>
+                <p>Type: Light Fighter</p>
+            </div>
+            <div class="card" data-size="4">
+                <img src="RSI Constellation Andromeda.jpg" alt="RSI Constellation Andromeda">
+                <h3>RSI Constellation Andromeda</h3>
+                <p>Type: Gunship/Cargo</p>
+            </div>
+            <div class="card" data-size="8">
+                <img src="Origin Jumpworks 890 Jump.png" alt="Origin Jumpworks 890 Jump">
+                <h3>Origin Jumpworks 890 Jump</h3>
+                <p>Type: Luxury Touring</p>
+            </div>
+            <div class="card" data-size="6">
+                <img src="Anvil Carrack.jpg" alt="Anvil Carrack">
+                <h3>Anvil Carrack</h3>
+                <p>Type: Exploration</p>
+            </div>
+            <div class="card" data-size="3">
+                <img src="Argo Mole.jpg" alt="Argo Mole">
+                <h3>Argo Mole</h3>
+                <p>Type: Medium Mining</p>
+            </div>
+            <div class="card" data-size="9">
+                <img src="Drake Kraken.jpg" alt="Drake Kraken">
+                <h3>Drake Kraken</h3>
+                <p>Type: Light Carrier</p>
+            </div>
+            <div class="card" data-size="10">
+                <img src="Aegis Javelin.jpg" alt="Aegis Javelin">
+                <h3>Aegis Javelin</h3>
+                <p>Type: Destroyer</p>
+            </div>
+            <div class="card" data-size="5">
+                <img src="MISC Starfarer.jpg" alt="MISC Starfarer">
+                <h3>MISC Starfarer</h3>
+                <p>Type: Refueling</p>
+            </div>
+            <div class="card" data-size="1">
+                <img src="Mirai Razor.jpg" alt="Mirai Razor">
+                <h3>Mirai Razor</h3>
+                <p>Type: Racing</p>
+            </div>
+            <div class="card" data-size="7">
+                <img src="Aegis Reclaimer.jpg" alt="Aegis Reclaimer">
+                <h3>Aegis Reclaimer</h3>
+                <p>Type: Heavy Salvage</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Crée par Rayan Galizzi, Fan de Star Citizen since 2948.</p>
+        <p>Contactez-moi pour plus d'informations.</p>
+        <p>© 2024 Star Citizen Card Collection</p>
+        <p>All game content belongs to © 2012-2024 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+    </footer>
+
+    <script>
+        function sortCardsAlphabetically() {
+            const container = document.getElementById('card-container');
+            const cards = Array.from(container.getElementsByClassName('card'));
+            cards.sort((a, b) => a.querySelector('h3').innerText.localeCompare(b.querySelector('h3').innerText));
+            cards.forEach(card => container.appendChild(card));
+        }
+
+        function sortCardsBySize() {
+            const container = document.getElementById('card-container');
+            const cards = Array.from(container.getElementsByClassName('card'));
+            cards.sort((a, b) => a.getAttribute('data-size') - b.getAttribute('data-size'));
+            cards.forEach(card => container.appendChild(card));
+        }
+    </script>
+</body>
+</html>
